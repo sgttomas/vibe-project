@@ -525,7 +525,7 @@ trait PerformanceAnalysisFramework {
 - P3 artifacts accumulated causing OOM issues on 10M ManySleepsBenchmark  
 - Critical insight: Start from clean baseline for elegant solutions
 
-**🎯 SUCCESS ACHIEVED**: Session 3 proves the methodology works when applied systematically from clean baseline. See `rapid-clean/CLAUDE.md` for complete implementation details.
+**🎯 SUCCESS ACHIEVED**: Session 3 proves the methodology works when applied systematically from clean baseline. See `rapid-clean/AGENT.md` for complete implementation details.
 
 ### Technical Patterns Identified - Elegant Trampolined Solution Approach
 
@@ -658,7 +658,7 @@ This performance optimization methodology has been **fully validated** with Sess
 2. **Analyze architecturally** ✅ - Identified single scheduling gateway as key insight  
 3. **Design principled solutions** ✅ - Elegant trampolined execution with unified callbacks
 4. **Validate comprehensively** ✅ - All benchmarks show competitive or superior performance
-5. **Document systematically** ✅ - Complete Session 3 implementation in rapid-clean/CLAUDE.md
+5. **Document systematically** ✅ - Complete Session 3 implementation in rapid-clean/AGENT.md
 
 ### Session 3 Performance Results ✅
 **OverheadBenchmark**: Rapid ~96ms vs Cats ~58ms vs ZIO ~6,360ms (competitive with Cats, 66x faster than ZIO)
@@ -675,8 +675,8 @@ This performance optimization methodology has been **fully validated** with Sess
 The **Rapid Performance Challenge** demonstrates both the potential and the pitfalls of AI-human collaboration for complex concurrency challenges through systematic methodology.
 
 **Evidence Available**: 
-- **Session 3 Success**: Complete implementation in `rapid-clean/CLAUDE.md` with competitive performance
-- **Historical Context**: Previous session documentation in `rapid/CLAUDE.md`
+- **Session 3 Success**: Complete implementation in `rapid-clean/AGENT.md` with competitive performance
+- **Historical Context**: Previous session documentation in `rapid/AGENT.md`
 
 **Validated Key Lessons**:
 - ✅ Systematic architectural thinking identifies correct solution approaches

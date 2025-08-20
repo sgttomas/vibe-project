@@ -1,9 +1,20 @@
 # Project Porting Guide - AI Co-Development Environment
 
+Intent / Steps / Outputs / Acceptance / Evidence / Correspondence
+- Intent: Port an existing project into an AI co‑dev environment using clean baselines and elegant, reproducible solutions.
+- Steps: Assess → choose migration vs rebase → design split → instantiate templates → migrate content → validate.
+- Outputs: Structured split (core/interface/tooling/orchestration), onboarding docs, manifests, runnable benchmarks.
+- Acceptance: Reproducible benchmarks and artifacts created; docs align to templates; quadrants and sync links present.
+- Evidence: Porting logs, benchmark JSONs, code diffs, manifests under each component.
+- Correspondence: Mirrors → canonical libraries → consumers (framework/app/orchestrator).
+
 **Purpose**: Systematic instructions for creating elegant AI co-development environments that enable breakthrough results  
 **Methodology**: Clean baseline architecture, elegant solution principles, systematic validation  
 **Scope**: Transform projects into AI collaboration environments optimized for architectural elegance and iterative refinement  
 **Validated**: Proven through Session 3 breakthrough - competitive performance achieved via minimal surgical changes
+
+See also
+- ../../docs/CO-DEV-QUADRANTS.md — Co‑dev model (normative/operative/evaluative/deliberative)
 
 ## Porting Overview
 
@@ -25,6 +36,14 @@ Before starting, ensure you have:
 - [ ] **Clean baseline capability** - Ability to start fresh when complexity accumulates
 - [ ] **Systematic methodology** - Commitment to evidence-based, incremental validation
 - [ ] **AI co-development mindset** - Embracing top-down architecture and iterative refinement
+
+Quick start checklist
+- [ ] Decide migration vs rebase (document rationale and success criteria)
+- [ ] Define split (core/interface/tooling/orchestration) and create skeletons
+- [ ] Instantiate templates (onboarding, directory map, improvement plan)
+- [ ] Migrate minimal runnable slice + add smoke/bench tests
+- [ ] Validate acceptance (benchmarks, artifacts, docs cross-links)
+- [ ] Plan upstream sync (mirror → canonical) and consumer verification
 
 ## Phase 1: Project Analysis & Classification
 
@@ -274,15 +293,13 @@ Whichever path you choose, document it clearly:
 ### Step 1: Create AI Co-Development Environment
 
 ```bash
-# Create new AI co-development environment
-PROJECT_NAME="rapid-ai-codev"  # Customize as needed
-SOURCE_PROJECT="/Users/ryan/Desktop/ai-env/rapid"
-TARGET_DIR="/Users/ryan/Desktop/ai-env/${PROJECT_NAME}"
+# Create new AI co-development environment (adjust paths)
+PROJECT_NAME="rapid-ai-codev"  # customize as needed
+SOURCE_PROJECT="<path-to-source-project>"  # e.g., ~/code/rapid
+TARGET_DIR="<path-to-target-dir>/${PROJECT_NAME}"  # e.g., ~/code
 
-mkdir -p "$TARGET_DIR"
-cd "$TARGET_DIR"
-
-echo "Creating AI co-development environment for: $PROJECT_NAME"
+mkdir -p "$TARGET_DIR" && cd "$TARGET_DIR"
+echo "Creating AI co-development environment for: $PROJECT_NAME at $TARGET_DIR"
 ```
 
 ### Step 2: Component Architecture Design
@@ -345,8 +362,8 @@ echo "Component structure created successfully"
 
 #### Apply Master Templates
 ```bash
-# Copy templates from vibe-code-challenge framework
-TEMPLATE_SOURCE="/Users/ryan/Desktop/ai-env/vibe-code-challenge"
+# Copy templates from your template root
+TEMPLATE_SOURCE="<path-to-template-root>"  # e.g., ../projects/ai-env/templates/app
 
 # Master onboarding guide
 cp "$TEMPLATE_SOURCE/TEMPLATE_ONBOARDING_GUIDE.md" ./CLAUDE_ONBOARDING_GUIDE.md

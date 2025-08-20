@@ -1,7 +1,8 @@
 # Claude Framework Setup Guide
 
 **For: Future Claude setting up documentation improvement cycle in chirality-semantic-framework**  
-**Purpose: Replicate the continuous improvement system in the Python framework project**
+**Purpose: Replicate the continuous improvement system in the Python framework project**  
+**Session 3 Validated**: Clean baseline approach enabling elegant solutions and competitive performance
 
 ## Context
 
@@ -33,13 +34,13 @@ Create a tracking document for all framework documentation:
 - Use same status categories (✅ CURRENT, 🆕 UPDATED, 🔄 NEEDS_UPDATE, etc.)
 - Track Python-specific docs (API.md for Python SDK, setup instructions, etc.)
 
-### 3. CLAUDE.md (Update Existing)
-The framework already has a CLAUDE.md but update it to:
+### 3. AGENT.md (Update Existing)
+The framework already has a AGENT.md but update it to:
 - Reference the continuous improvement cycle
 - Point to the onboarding guide
 - Explain the relationship with chirality-ai-app documentation
 
-### 4. CLAUDE_ONBOARDING_GUIDE.md
+### 4. AGENT_ONBOARDING_GUIDE.md
 Create in `/Users/ryan/Desktop/ai-env/` (shared location) with framework-specific instructions:
 - Reading sequence for framework documentation
 - How to work with Python/CF14 documentation
@@ -47,11 +48,13 @@ Create in `/Users/ryan/Desktop/ai-env/` (shared location) with framework-specifi
 
 ## Step 3: Key Differences to Account For
 
-### Python Project Specifics
+### Python Project Specifics (Session 3 Enhanced)
 - **Package Distribution**: Documentation must align with PyPI releases
 - **API Documentation**: Focus on Python SDK and CLI usage
 - **Mathematical Concepts**: CF14 semantic operations need clear explanation
 - **Test Coverage**: Document test matrices and fixtures
+- **Session 3 Principles**: Support elegant ~20-line solutions and systematic validation
+- **Performance Focus**: Documentation enabling competitive benchmark results
 
 ### Document Categories to Include
 ```
@@ -93,7 +96,7 @@ This directory contains the following 27 files:
 1. API.md
 2. ARCHITECTURE.md
 3. CHANGELOG.md
-4. CLAUDE - to be replaced with a new instance for this folder specificalliy as per instructions.md
+4. AGENT - to be replaced with a new instance for this folder specificalliy as per instructions.md
 5. COMMIT_HOOKS.md
 6. CONTINUOUS_IMPROVEMENT_PLAN.md
 7. CONTRIBUTING.md
@@ -118,7 +121,7 @@ This directory contains the following 27 files:
 26. requirements.txt
 27. tsconfig.json
 
-**Key Task**: The CLAUDE.md file in this directory needs to be replaced with a new version that explains:
+**Key Task**: The AGENT.md file in this directory needs to be replaced with a new version that explains:
 - This is the app documentation mirror in the framework project
 - How to use these docs to understand the TypeScript/app side
 - The bidirectional knowledge transfer between projects
@@ -128,8 +131,8 @@ This directory contains the following 27 files:
 1. **First, read existing framework documentation** to understand current state
 2. **Create CONTINUOUS_IMPROVEMENT_PLAN.md** adapting the app version
 3. **Create KEY_PROJECT_FILES.md** listing all current docs with status
-4. **Update existing CLAUDE.md** to reference the new system
-5. **Create framework-specific CLAUDE_ONBOARDING_GUIDE.md**
+4. **Update existing AGENT.md** to reference the new system
+5. **Create framework-specific AGENT_ONBOARDING_GUIDE.md**
 6. **Test the cycle** by following your own onboarding guide
 
 ## Step 6: Special Considerations
@@ -157,25 +160,28 @@ Keep documentation accessible while maintaining technical accuracy:
 After setup, verify:
 - [ ] CONTINUOUS_IMPROVEMENT_PLAN.md exists and references correct Python files
 - [ ] KEY_PROJECT_FILES.md lists all documentation with current status
-- [ ] CLAUDE.md explains the improvement cycle
+- [ ] AGENT.md explains the improvement cycle
 - [ ] Onboarding guide works when followed step-by-step
 - [ ] Git integration workflow makes sense for Python project
 - [ ] PyPI publishing is accounted for in the process
 
-## Why This Matters
+## Why This Matters (Session 3 Validated)
 
 Setting up the same systematic improvement cycle in both projects ensures:
 - Consistent documentation quality across the full Chirality system
 - Knowledge transfer between Python and TypeScript components
 - Systematic evolution of both halves of the architecture
 - Clear onboarding for future contributors to either project
+- **Session 3 Success Pattern**: Reproducible methodology for breakthrough performance
+- **Clean Baseline Capability**: Prevention of P3-style artifact accumulation
+- **AI Collaboration Excellence**: Systematic approach enabling competitive results
 
 ## Quick Reference for File Locations
 
 ```
 /Users/ryan/Desktop/ai-env/
-├── CLAUDE_ONBOARDING_GUIDE.md (for app)
-├── CLAUDE_FRAMEWORK_ONBOARDING_GUIDE.md (create for framework)
+├── AGENT_ONBOARDING_GUIDE.md (for app)
+├── AGENT_FRAMEWORK_ONBOARDING_GUIDE.md (create for framework)
 ├── chirality-ai-app/
 │   ├── CONTINUOUS_IMPROVEMENT_PLAN.md ✓
 │   ├── KEY_PROJECT_FILES.md ✓
@@ -183,7 +189,7 @@ Setting up the same systematic improvement cycle in both projects ensures:
 └── chirality-semantic-framework/
     ├── CONTINUOUS_IMPROVEMENT_PLAN.md (create)
     ├── KEY_PROJECT_FILES.md (create)
-    └── CLAUDE.md (update)
+    └── AGENT.md (update)
 ```
 
 ---

@@ -2,6 +2,9 @@
 
 **For future Claude instances working on Chirality Framework projects**
 
+**Code at its best is filigree: elegance revealed through structure and repetition. 
+What looks complex is pattern born of clarity, shaped by architecture, and refined through iteration.**
+
 ## Quick Start
 
 You're working with a dual-project system. First, determine which project needs work:
@@ -9,25 +12,34 @@ You're working with a dual-project system. First, determine which project needs 
 - **chirality-semantic-framework**: Python CF14 semantic operations
 
 Then use the appropriate setup guide:
-- **For app work**: Read CLAUDE_APP_SETUP_GUIDE.md (in this directory)
-- **For framework work**: Read CLAUDE_FRAMEWORK_SETUP_GUIDE.md (in this directory)
+- **For app work**: Read AGENT_APP_SETUP_GUIDE.md (in this directory)
+- **For framework work**: Read AGENT_FRAMEWORK_SETUP_GUIDE.md (in this directory)
 - **For new Claude instances**: Continue reading this guide
 
 ## The System Overview
 
-**Two Projects, One System:**
+**Three Projects, One Environment:**
 ```
-/Users/ryan/Desktop/ai-env/
+/Users/ryan/Desktop/ai-env/vibe-code-challenge/
 ├── chirality-ai-app/           (TypeScript/Next.js app)
 │   └── lib/chirality-semantic-framework/  (Framework docs mirror)
-└── chirality-semantic-framework/  (Python CF14 framework)
-    └── lib/chirality-ai-app/   (App docs mirror)
+├── chirality-semantic-framework/  (Python CF14 framework)
+│   └── lib/chirality-ai-app/   (App docs mirror)
+├── rapid/                      (Previous session - P3 artifacts accumulated)
+├── rapid-clean/                (Session 3 - SUCCESSFUL elegant solution!)
+│   ├── AGENT.md              (Session 3 clean implementation docs)
+│   ├── benchmark/results/     (Performance validation data)
+│   │   └── benchmarks-session3-clean-elegant-final.json
+│   ├── docs/ai-dev/          (Complete AI collaboration logs)
+│   └── core/                  (Elegant ~20-line trampolined solution)
 ```
 
 **Key Guides in This Directory:**
-- **CLAUDE_ONBOARDING_GUIDE.md** (this file) - Start here
-- **CLAUDE_APP_SETUP_GUIDE.md** - For app documentation work
-- **CLAUDE_FRAMEWORK_SETUP_GUIDE.md** - For framework documentation work
+- **AGENT_ONBOARDING_GUIDE.md** (this file) - Start here
+- **AGENT_APP_SETUP_GUIDE.md** - For app documentation work
+- **AGENT_FRAMEWORK_SETUP_GUIDE.md** - For framework documentation work
+- **AGENT_PERFORMANCE_OPTIMIZATION_GUIDE.md** - For rapid/ performance work
+- **AI_PERFORMANCE_COLLABORATION_CASE_STUDY.md** - Trampolined solution case study
 
 ## Step 1: Determine Your Task
 
@@ -38,22 +50,37 @@ pwd  # Where are you?
 
 If in `/chirality-ai-app/`: You're doing app documentation
 If in `/chirality-semantic-framework/`: You're doing framework documentation
+**If in `/rapid-clean/`**: You're working with the SUCCESSFUL Session 3 elegant solution - **Read `rapid-clean/AGENT.md` for clean implementation details**
+**If in `/rapid/`**: You're reviewing previous sessions with P3 artifacts - **Read `rapid/AGENT.md` for historical context**
 
 ## Step 2: Read the Knowledge Transfer Pipeline
 
 ### For App Work
 Read these in `/chirality-ai-app/lib/chirality-semantic-framework/`:
 1. **KNOWLEDGE_TRANSFER_MANIFEST.md** - The canonical list (29 files)
-2. **CLAUDE.md** - Your role for this mirror
+2. **AGENT.md** - Your role for this mirror
 3. **README.md** through **VERSION.md** - All framework docs
 4. Review the Python examples and config files
 
 ### For Framework Work  
 Read these in `/chirality-semantic-framework/lib/chirality-ai-app/`:
 1. **KNOWLEDGE_TRANSFER_MANIFEST.md** - The canonical list (27 files)
-2. **CLAUDE.md** - Your role for this mirror
+2. **AGENT.md** - Your role for this mirror
 3. **README.md** through **VERSION.md** - All app docs
 4. Review the TypeScript configs and package files
+
+### For Performance Work - Session 3 (SUCCESSFUL)
+Read these in `/rapid-clean/`:
+1. **AGENT.md** - Session 3 clean implementation achieving competitive performance
+2. **benchmark/results/benchmarks-session3-clean-elegant-final.json** - Performance validation data
+3. **core/jvm/src/main/scala/rapid/FixedThreadPoolFiber.scala** - Elegant ~20-line trampolined solution
+4. **docs/ai-dev/** - Complete AI collaboration logs from multiple LLMs
+
+### For Performance Work - Historical Context
+Read these in `/rapid/`:
+1. **AGENT.md** - Previous session documentation with P3 artifacts
+2. **DEVELOPMENT_SESSION_SUMMARY.md** - Lessons learned from incorrect benchmarks
+3. **AI_PERFORMANCE_COLLABORATION_CASE_STUDY.md** - Analysis of optimization attempts
 
 ## Step 3: Read Project-Specific Documentation
 
@@ -67,7 +94,7 @@ Key files to understand:
 Key files to check/create:
 - **CONTINUOUS_IMPROVEMENT_PLAN.md** - Create if missing
 - **KEY_PROJECT_FILES.md** - Create if missing
-- **CLAUDE.md** - Update existing one
+- **AGENT.md** - Update existing one
 
 ## Step 4: Understand the Improvement Cycle
 
@@ -109,10 +136,10 @@ Even if working on one project, check the other:
 ## Common Tasks Reference
 
 ### Setting Up Framework Documentation System
-→ Read CLAUDE_FRAMEWORK_SETUP_GUIDE.md
+→ Read AGENT_FRAMEWORK_SETUP_GUIDE.md
 
 ### Maintaining App Documentation
-→ Read CLAUDE_APP_SETUP_GUIDE.md
+→ Read AGENT_APP_SETUP_GUIDE.md
 
 ### Creating New Release
 1. Update VERSION.md
@@ -123,28 +150,28 @@ Even if working on one project, check the other:
 ### Updating Mirrors
 1. Check KNOWLEDGE_TRANSFER_MANIFEST.md in both mirrors
 2. Sync changed files
-3. Update CLAUDE.md if needed
+3. Update AGENT.md if needed
 4. Test integration points
 
 ## File Location Quick Reference
 
 ```
 /Users/ryan/Desktop/ai-env/
-├── CLAUDE_ONBOARDING_GUIDE.md (this file)
-├── CLAUDE_APP_SETUP_GUIDE.md
-├── CLAUDE_FRAMEWORK_SETUP_GUIDE.md
+├── AGENT_ONBOARDING_GUIDE.md (this file)
+├── AGENT_APP_SETUP_GUIDE.md
+├── AGENT_FRAMEWORK_SETUP_GUIDE.md
 ├── chirality-ai-app/
 │   ├── CONTINUOUS_IMPROVEMENT_PLAN.md
 │   ├── KEY_PROJECT_FILES.md
 │   └── lib/chirality-semantic-framework/ (29 files)
 │       ├── KNOWLEDGE_TRANSFER_MANIFEST.md
-│       └── CLAUDE.md
+│       └── AGENT.md
 └── chirality-semantic-framework/
     ├── CONTINUOUS_IMPROVEMENT_PLAN.md (create if missing)
     ├── KEY_PROJECT_FILES.md (create if missing)
     └── lib/chirality-ai-app/ (27 files)
         ├── KNOWLEDGE_TRANSFER_MANIFEST.md
-        └── CLAUDE.md
+        └── AGENT.md
 ```
 
 ## Next Steps

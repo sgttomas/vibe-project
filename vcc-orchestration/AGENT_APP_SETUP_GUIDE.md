@@ -1,7 +1,8 @@
 # Claude App Setup Guide
 
 **For: Future Claude updating documentation improvement cycle in chirality-ai-app**  
-**Purpose: Maintain and evolve the continuous improvement system in the TypeScript app project**
+**Purpose: Maintain and evolve the continuous improvement system in the TypeScript app project**  
+**Session 3 Validated**: Systematic AI-human collaboration methodology enabling breakthrough performance results
 
 ## Context
 
@@ -25,15 +26,15 @@ cd /Users/ryan/Desktop/ai-env/chirality-ai-app/
 1. **CONTINUOUS_IMPROVEMENT_PLAN.md** - The ongoing process framework
 2. **CONSOLIDATED_IMPROVEMENT_PLAN.md** - May exist from previous cycle
 3. **KEY_PROJECT_FILES.md** - Tracking document for all documentation
-4. **CLAUDE.md** - AI collaboration guide (in project root)
-5. **CLAUDE_ONBOARDING_GUIDE.md** - In parent directory `/Users/ryan/Desktop/ai-env/`
+4. **AGENT.md** - AI collaboration guide (in project root)
+5. **AGENT_ONBOARDING_GUIDE.md** - In parent directory `/Users/ryan/Desktop/ai-env/`
 
 ### Knowledge Transfer Pipeline
 Located in `/chirality-ai-app/lib/chirality-semantic-framework/` containing:
 1. 4_DOCUMENTS_ANALYSIS.md
 2. API.md
 3. CHANGELOG.md
-4. CLAUDE.md
+4. AGENT.md
 5. COMMIT_HOOKS.md
 6. CONTINUOUS_IMPROVEMENT_PLAN.md
 7. CONTRIBUTING.md
@@ -57,13 +58,15 @@ Located in `/chirality-ai-app/lib/chirality-semantic-framework/` containing:
 
 ## Step 3: Check for Updates Needed
 
-### Review Triggers
+### Review Triggers (Session 3 Enhanced)
 Look for these signs that updates are needed:
 - Git commits with documentation flags (MAJOR_OVERHAUL, STANDARD_UPDATE)
 - New features added to the app
 - User feedback about documentation issues
 - Quarterly review cycle due
 - Integration changes with chirality-semantic-framework
+- **Session 3 Learning**: Accumulated complexity (P3-style artifacts) requiring clean baseline approach
+- **Performance validation needs**: Benchmark results requiring documentation updates
 
 ### Version and Release Coordination
 - Check if app version has changed in package.json
@@ -88,18 +91,19 @@ Look for these signs that updates are needed:
    - Update KEY_PROJECT_FILES.md status as you go
    - Maintain reasoning traces
 
-### Regular Maintenance Updates
+### Regular Maintenance Updates (Session 3 Enhanced)
 
 1. **Update KEY_PROJECT_FILES.md**
    ```markdown
    - Change statuses: 🔄 NEEDS_UPDATE → 🆕 UPDATED → ✅ CURRENT
    - Add new files that were created
    - Mark deprecated files
+   - Apply Session 3 principles: clean baseline + elegant solutions
    ```
 
 2. **Synchronize Mirror Documentation**
    - Check if `/lib/chirality-semantic-framework/` needs updates
-   - Particularly CLAUDE.md in that directory
+   - Particularly AGENT.md in that directory
    - Ensure version numbers match current framework release
 
 3. **Update Integration Documentation**
@@ -137,7 +141,7 @@ That directory should contain these 27 files:
 1. API.md
 2. ARCHITECTURE.md
 3. CHANGELOG.md
-4. CLAUDE.md
+4. AGENT.md
 5. COMMIT_HOOKS.md
 6. CONTINUOUS_IMPROVEMENT_PLAN.md
 7. CONTRIBUTING.md
@@ -167,7 +171,7 @@ That directory should contain these 27 files:
 ## Step 7: Implementation Checklist
 
 ### Before Starting
-- [ ] Read CLAUDE_ONBOARDING_GUIDE.md
+- [ ] Read AGENT_ONBOARDING_GUIDE.md
 - [ ] Review current CONTINUOUS_IMPROVEMENT_PLAN.md
 - [ ] Check for existing CONSOLIDATED_IMPROVEMENT_PLAN.md
 - [ ] Review KEY_PROJECT_FILES.md current statuses
@@ -182,7 +186,7 @@ That directory should contain these 27 files:
 ### After Completion
 - [ ] Update KEY_PROJECT_FILES.md final statuses
 - [ ] If cycle complete, handle plan transformation
-- [ ] Update CLAUDE_ONBOARDING_GUIDE.md if process changed
+- [ ] Update AGENT_ONBOARDING_GUIDE.md if process changed
 - [ ] Consider framework mirror updates
 - [ ] Document lessons learned
 
@@ -213,9 +217,9 @@ That directory should contain these 27 files:
 
 ```
 /Users/ryan/Desktop/ai-env/
-├── CLAUDE_ONBOARDING_GUIDE.md (app onboarding)
-├── CLAUDE_APP_SETUP_GUIDE.md (this file)
-├── CLAUDE_FRAMEWORK_SETUP_GUIDE.md (framework setup)
+├── AGENT_ONBOARDING_GUIDE.md (app onboarding)
+├── AGENT_APP_SETUP_GUIDE.md (this file)
+├── AGENT_FRAMEWORK_SETUP_GUIDE.md (framework setup)
 └── chirality-ai-app/
     ├── CONTINUOUS_IMPROVEMENT_PLAN.md ✓
     ├── KEY_PROJECT_FILES.md ✓
@@ -226,15 +230,17 @@ That directory should contain these 27 files:
     └── All other project files...
 ```
 
-## Success Criteria
+## Success Criteria (Session 3 Validated)
 
 You know the update is successful when:
-- All documentation accurately reflects current implementation
+- All documentation accurately reflects current implementation (Session 3: competitive performance achieved)
 - KEY_PROJECT_FILES.md shows appropriate status for all docs
-- Code examples work when tested
+- Code examples work when tested (Session 3: all tests pass)
 - Internal links are functional
 - Version numbers are consistent
 - Integration documentation matches both projects
+- **Session 3 Standards**: Documentation supports elegant solutions and breakthrough results
+- **AI Collaboration Quality**: Future Claude instances can achieve similar systematic success
 
 ---
 

@@ -1,4 +1,4 @@
-# CLAUDE.md
+# AGENT.md
 *AI Collaboration Guide for the Chirality Framework*
 
 **Session 3 Validated**: This framework supports systematic AI-human collaboration achieving competitive performance through elegant solution principles.
