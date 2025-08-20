@@ -1,0 +1,156 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+cf14-env/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Testing
+.tox/
+.nox/
+.coverage
+.pytest_cache/
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+htmlcov/
+
+# Documentation
+docs/_build/
+.readthedocs.yml
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# API Keys (never commit these)
+*.key
+*.pem
+*.p12
+config/secrets/
+
+# Development History (contains sensitive info)
+devhistory/
+
+# Neo4j
+neo4j-data/
+neo4j-logs/
+neo4j-plugins/
+
+# Output directories
+output/
+results/
+artifacts/
+dumps/
+
+# Temporary files
+*.tmp
+*.temp
+.temporary/
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Node.js (for any JS tooling)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+
+# Next.js
+.next/
+out/
+
+# Docker
+.dockerignore
+Dockerfile*
+docker-compose*.yml
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Matrix operation artifacts
+matrix_*.json
+reasoning_trace_*.json
+semantic_valley_*.json
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Profiling
+*.prof
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
