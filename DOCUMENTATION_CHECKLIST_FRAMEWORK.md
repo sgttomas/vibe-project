@@ -5,6 +5,17 @@
 **Scope**: Complete documentation lifecycle management across all project components enabling elegant solution development  
 **Validated**: Session 3 demonstrated breakthrough performance through systematic AI-human collaboration documentation
 
+See also
+- ../../docs/CO-DEV-QUADRANTS.md — Co‑dev model (normative/operative/evaluative/deliberative)
+
+Acceptance checklist (quick)
+- Onboarding present and current: master guide + AGENT component setup guides
+- Knowledge transfer: `KNOWLEDGE_TRANSFER_MANIFEST.md` per mirror; mirrors include `AGENT.md`
+- Process docs: `CONTINUOUS_IMPROVEMENT_PLAN.md` + `CONSOLIDATED_IMPROVEMENT_PLAN.md` defined
+- Status: `KEY_PROJECT_FILES.md` (or equivalent) exists and is updated
+- Cross-links: README(s) and guides link to quadrants doc and sync paths
+- Reproducibility: Benchmarks/artifacts referenced with paths and acceptance criteria
+
 ## Framework Structure
 
 Each document type follows a systematic four-dimensional analysis (Session 3 validated):
@@ -39,10 +50,10 @@ Each document type follows a systematic four-dimensional analysis (Session 3 val
 
 **STAKEHOLDERS:**
 - Human: Project architects (defines structure), tech leads (validates accuracy), new team members (validates usability), AI collaboration leads (Session 3 methodology)
-- AI: Claude instances (primary users achieving breakthrough results), automated validation systems (quality assurance)
+- AI: Agent instances (primary users achieving breakthrough results), automated validation systems (quality assurance)
 - Software: CI/CD systems (automated validation), documentation generators (content management), benchmark validation systems (Session 3 evidence)
 
-#### CLAUDE_[COMPONENT]_SETUP_GUIDE.md
+#### AGENT_[COMPONENT]_SETUP_GUIDE.md
 **WHAT:**
 - Purpose: Component-specific AI collaboration patterns and procedures (Session 3: enabling elegant surgical changes)
 - Content: Technology-specific workflows, quality standards, integration patterns supporting ~20-line principle
@@ -63,7 +74,7 @@ Each document type follows a systematic four-dimensional analysis (Session 3 val
 
 **STAKEHOLDERS:**
 - Human: Component owners (defines workflows), developers (validates procedures), quality engineers (ensures standards)
-- AI: Claude instances (primary users), component-specific automation (integration partners)
+- AI: Agent instances (primary users), component-specific automation (integration partners)
 - Software: Component build systems (integration points), testing frameworks (validation), deployment systems (operational requirements)
 
 ### 2. Knowledge Transfer Documents
@@ -89,10 +100,10 @@ Each document type follows a systematic four-dimensional analysis (Session 3 val
 
 **STAKEHOLDERS:**
 - Human: Documentation managers (maintains accuracy), component owners (validates completeness), integration engineers (ensures compatibility)
-- AI: Claude instances (uses for context), synchronization systems (automated maintenance), validation systems (quality assurance)
+- AI: Agent instances (uses for context), synchronization systems (automated maintenance), validation systems (quality assurance)
 - Software: File synchronization tools (automated updates), version control systems (change tracking), CI/CD systems (validation integration)
 
-#### CLAUDE.md (Mirror-Specific)
+#### AGENT.md (Mirror-Specific)
 **WHAT:**
 - Purpose: AI collaboration guide for cross-component work within mirror directories
 - Content: Mirror purpose, usage patterns, integration procedures, quality standards
@@ -101,7 +112,7 @@ Each document type follows a systematic four-dimensional analysis (Session 3 val
 
 **WHERE:**
 - Data Sources: Component integration patterns, collaboration workflows, quality standards, usage analytics
-- Location: Within each mirror directory (lib/[component]/CLAUDE.md)
+- Location: Within each mirror directory (lib/[component]/AGENT.md)
 - Integration Points: Master onboarding guides, component setup guides, knowledge transfer manifests
 - Dependencies: Component documentation structure, integration patterns, collaboration workflows
 
@@ -113,7 +124,7 @@ Each document type follows a systematic four-dimensional analysis (Session 3 val
 
 **STAKEHOLDERS:**
 - Human: Integration architects (defines patterns), component owners (validates accuracy), collaboration leads (optimizes workflows)
-- AI: Claude instances (primary users), cross-component automation (integration partners), analytics systems (usage tracking)
+- AI: Agent instances (primary users), cross-component automation (integration partners), analytics systems (usage tracking)
 - Software: Integration testing systems (validation), analytics platforms (usage monitoring), documentation systems (content management)
 
 ### 3. Process Management Documents
@@ -139,7 +150,7 @@ Each document type follows a systematic four-dimensional analysis (Session 3 val
 
 **STAKEHOLDERS:**
 - Human: Quality managers (defines standards), process engineers (optimizes procedures), component owners (executes improvements)
-- AI: Claude instances (executes improvements), quality analysis systems (monitors metrics), automation systems (executes procedures)
+- AI: Agent instances (executes improvements), quality analysis systems (monitors metrics), automation systems (executes procedures)
 - Software: Quality measurement systems (analytics), improvement tracking tools (execution management), CI/CD systems (automation integration)
 
 #### CONSOLIDATED_IMPROVEMENT_PLAN.md
@@ -163,7 +174,7 @@ Each document type follows a systematic four-dimensional analysis (Session 3 val
 
 **STAKEHOLDERS:**
 - Human: Improvement executors (implements changes), quality validators (ensures standards), stakeholders (accepts results)
-- AI: Claude instances (primary executors), validation systems (quality assurance), tracking systems (progress monitoring)
+- AI: Agent instances (primary executors), validation systems (quality assurance), tracking systems (progress monitoring)
 - Software: Execution tracking tools (progress management), validation systems (quality checks), archival systems (completion management)
 
 ### 4. Status & Tracking Documents
@@ -189,7 +200,7 @@ Each document type follows a systematic four-dimensional analysis (Session 3 val
 
 **STAKEHOLDERS:**
 - Human: Documentation managers (monitors status), quality engineers (validates indicators), maintenance teams (uses for scheduling)
-- AI: Claude instances (updates status), monitoring systems (tracks changes), validation systems (quality checks)
+- AI: Agent instances (updates status), monitoring systems (tracks changes), validation systems (quality checks)
 - Software: File monitoring tools (automated tracking), quality systems (indicator management), maintenance schedulers (workflow automation)
 
 ### 5. Architecture & Configuration Documents
@@ -215,7 +226,7 @@ Each document type follows a systematic four-dimensional analysis (Session 3 val
 
 **STAKEHOLDERS:**
 - Human: Project architects (defines structure), developers (validates accuracy), new team members (uses for navigation)
-- AI: Claude instances (uses for navigation), structure analysis systems (automated validation), documentation generators (content management)
+- AI: Agent instances (uses for navigation), structure analysis systems (automated validation), documentation generators (content management)
 - Software: File system monitoring (change detection), documentation systems (content management), navigation tools (integration)
 
 #### SPLIT_APPS_ARCHITECTURE.md
@@ -239,7 +250,7 @@ Each document type follows a systematic four-dimensional analysis (Session 3 val
 
 **STAKEHOLDERS:**
 - Human: System architects (defines patterns), technical leads (validates implementation), integration engineers (ensures compatibility)
-- AI: Claude instances (follows patterns), architectural analysis systems (validation), integration systems (implementation)
+- AI: Agent instances (follows patterns), architectural analysis systems (validation), integration systems (implementation)
 - Software: Architecture validation tools (quality assurance), integration frameworks (implementation), documentation systems (content management)
 
 ## Systematic Validation Framework
