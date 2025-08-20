@@ -9,14 +9,16 @@
 
 The Vibe Project is a split-apps development environment designed for AI-assisted development. It consists of three interconnected projects with bidirectional knowledge transfer capabilities.
 
+Note: devhistory/ directories are intentionally excluded from this directory map to reduce noise. Refer to version control for historical artifacts.
+
 ## Root Structure
 
 ```
 vibe-project/
-├── CLAUDE_ONBOARDING_GUIDE.md         # Master AI collaboration entry point
-├── CLAUDE_FRONTEND_SETUP_GUIDE.md     # Frontend-specific AI documentation
-├── CLAUDE_BACKEND_SETUP_GUIDE.md      # Backend-specific AI documentation
-├── CLAUDE_PERFORMANCE_OPTIMIZATION_GUIDE.md # Performance engineering methodology
+├── AGENT_ONBOARDING_GUIDE.md          # Master AI collaboration entry point
+├── AGENT_FRONTEND_SETUP_GUIDE.md      # Frontend-specific AI documentation
+├── AGENT_BACKEND_SETUP_GUIDE.md       # Backend-specific AI documentation
+├── AGENT_PERFORMANCE_OPTIMIZATION_GUIDE.md # Performance engineering methodology
 ├── DIRECTORY_STRUCTURE.md             # Environment architecture overview
 ├── SPLIT_APPS_ARCHITECTURE.md         # Detailed architecture documentation
 ├── PROJECT_DIRECTORY.md               # This file - complete structure map
@@ -28,7 +30,7 @@ vibe-project/
 ├── rapid/                             # Performance challenge - previous sessions (P3 artifacts)
 │   ├── benchmark/results/
 │   ├── docs/challenge/
-│   └── CLAUDE.md                     # Historical session documentation
+│   └── AGENT.md                      # Historical session documentation
 └── rapid-clean/                       # Session 3 - SUCCESSFUL elegant solution
     ├── benchmark/
     │   └── results/
@@ -47,7 +49,7 @@ vibe-project/
     │       ├── Gemini_LOGS.txt
     │       ├── Grok_LOGS.txt
     │       └── LOGS_*.txt            # Multiple iteration logs
-    ├── CLAUDE.md                      # Session 3 clean implementation docs
+    ├── AGENT.md                       # Session 3 clean implementation docs
     └── build.sbt
 ```
 
@@ -77,14 +79,7 @@ vcc-app/
 │   └── selector.test.ts
 ├── config/                            # Application configuration
 │   └── selection.json
-├── devhistory/                        # Development history and archives
-│   ├── CONSOLIDATED_IMPROVEMENT_PLAN.md
-│   ├── CONTINUOUS_IMPROVEMENT_PLAN.md
-│   ├── GRAPHQL_NEO4J_INTEGRATION_PLAN.md
-│   ├── INTEGRATION_ARCHITECTURE.md
-│   ├── NEO4J_SEMANTIC_INTEGRATION.md
-│   ├── frontend_backend_integration.txt
-│   └── publish-chirality-ai-app.txt
+├── devhistory/                        # Development history (excluded from this map)
 │
 ├── docs/                              # Documentation
 │   ├── adr/                          # Architecture Decision Records
@@ -105,14 +100,14 @@ vcc-app/
 │
 ├── lib/                               # Libraries and mirrors
 │   ├── ai-env/                      # Environment documentation mirror
-│   │   ├── CLAUDE_APP_SETUP_GUIDE.md
-│   │   ├── CLAUDE_FRAMEWORK_SETUP_GUIDE.md
-│   │   ├── CLAUDE_ONBOARDING_GUIDE.md
+│   │   ├── AGENT_APP_SETUP_GUIDE.md
+│   │   ├── AGENT_FRAMEWORK_SETUP_GUIDE.md
+│   │   ├── AGENT_ONBOARDING_GUIDE.md
 │   │   ├── DIRECTORY_STRUCTURE.md
 │   │   └── SPLIT_APPS_ARCHITECTURE.md
 │   ├── chirality-semantic-framework/ # Backend documentation mirror
 │   │   ├── KNOWLEDGE_TRANSFER_MANIFEST.md
-│   │   ├── CLAUDE.md
+│   │   ├── AGENT.md
 │   │   └── [29 documentation files]
 │   └── graph/                        # Graph utilities
 │       ├── integration.ts
@@ -310,30 +305,19 @@ vcc-framework/
 │   ├── cli.py
 │   └── normative_spec.txt
 │
-├── devhistory/                        # Development history
-│   ├── CATEGORICAL_IMPLEMENTATION.md
-│   ├── CLAUDE.md
-│   ├── CONSOLIDATED_IMPROVEMENT_PLAN.md
-│   ├── CONTINUOUS_IMPROVEMENT_PLAN.md
-│   ├── GRAPHQL_NEO4J_INTEGRATION_PLAN.md
-│   ├── INTEGRATION_ARCHITECTURE.md
-│   ├── MATHEMATICAL_FOUNDATIONS.md
-│   ├── MVP_IMPLEMENTATION_PLAN.md
-│   ├── NEO4J_SEMANTIC_INTEGRATION.md
-│   ├── THEORETICAL_SIGNIFICANCE.md
-│   └── [various .txt files]
+├── devhistory/                        # Development history (excluded from this map)
 │
 ├── echo-test/                         # Echo test matrices
 ├── lib/                               # Library mirrors
 │   ├── ai-env/                      # Environment documentation
-│   │   ├── CLAUDE_APP_SETUP_GUIDE.md
-│   │   ├── CLAUDE_FRAMEWORK_SETUP_GUIDE.md
-│   │   ├── CLAUDE_ONBOARDING_GUIDE.md
+│   │   ├── AGENT_APP_SETUP_GUIDE.md
+│   │   ├── AGENT_FRAMEWORK_SETUP_GUIDE.md
+│   │   ├── AGENT_ONBOARDING_GUIDE.md
 │   │   ├── DIRECTORY_STRUCTURE.md
 │   │   └── SPLIT_APPS_ARCHITECTURE.md
 │   └── chirality-ai-app/            # Frontend documentation mirror
 │       ├── KNOWLEDGE_TRANSFER_MANIFEST.md
-│       ├── CLAUDE.md
+│       ├── AGENT.md
 │       └── [27 documentation files]
 │
 ├── openai-validated/                  # OpenAI validation results
@@ -345,7 +329,7 @@ vcc-framework/
 ├── API.md                             # API documentation
 ├── ARCHITECTURE.md                    # Architecture overview
 ├── CHANGELOG.md                       # Change log
-├── CLAUDE.md                          # Claude collaboration guide
+├── AGENT.md                           # Agent collaboration guide
 ├── COMMIT_HOOKS.md                    # Git hooks documentation
 ├── CONSOLIDATED_IMPROVEMENT_PLAN.md   # Improvement execution
 ├── CONTINUOUS_IMPROVEMENT_PLAN.md     # Improvement process
@@ -379,11 +363,11 @@ vcc-framework/
 ## Rapid Performance Challenge (Scala)
 
 **Status**: ✅ Elegant trampolined solution implemented (23% faster than Cats Effect)  
-**Warning**: ⚠️ Contains P3 artifacts that cause OOM on 10M operations - see CLAUDE.md
+**Warning**: ⚠️ Contains P3 artifacts that cause OOM on 10M operations - see AGENT.md
 
 ```
 rapid/
-├── CLAUDE.md                          # ⭐ CRITICAL: Complete development session docs
+├── AGENT.md                           # ⭐ CRITICAL: Complete development session docs
 ├── DEVELOPMENT_SESSION_SUMMARY.md     # Executive summary with P3 artifact warnings
 ├── README.md                          # Updated with performance challenge results
 │
@@ -436,7 +420,7 @@ rapid/
 ### Key Files for Future Development:
 
 **Must Read First**:
-- `CLAUDE.md` - Complete development session documentation
+- `AGENT.md` - Complete development session documentation
 - `DEVELOPMENT_SESSION_SUMMARY.md` - Executive summary with recommendations
 
 **Implementation Status**:
@@ -469,9 +453,9 @@ vcc-orchestration/
 │   ├── health-check.sh               # Health check script
 │   └── start-all.sh                  # Start all services
 │
-├── CLAUDE_APP_SETUP_GUIDE.md         # App setup guide
-├── CLAUDE_FRAMEWORK_SETUP_GUIDE.md   # Framework setup guide
-├── CLAUDE_ONBOARDING_GUIDE.md        # Onboarding guide
+├── AGENT_APP_SETUP_GUIDE.md          # App setup guide
+├── AGENT_FRAMEWORK_SETUP_GUIDE.md    # Framework setup guide
+├── AGENT_ONBOARDING_GUIDE.md         # Onboarding guide
 ├── DIRECTORY_STRUCTURE.md            # Directory structure
 ├── README.md                          # Main readme
 └── SPLIT_APPS_ARCHITECTURE.md        # Architecture docs
@@ -483,7 +467,7 @@ vcc-orchestration/
 ```
 vcc-app/lib/chirality-semantic-framework/
 ├── KNOWLEDGE_TRANSFER_MANIFEST.md    # Canonical file list
-├── CLAUDE.md                          # AI collaboration guide
+├── AGENT.md                           # AI collaboration guide
 └── [Complete backend documentation]
 ```
 
@@ -491,7 +475,7 @@ vcc-app/lib/chirality-semantic-framework/
 ```
 vcc-framework/lib/chirality-ai-app/
 ├── KNOWLEDGE_TRANSFER_MANIFEST.md    # Canonical file list
-├── CLAUDE.md                          # AI collaboration guide
+├── AGENT.md                           # AI collaboration guide
 └── [Complete frontend documentation]
 ```
 
@@ -500,7 +484,7 @@ vcc-framework/lib/chirality-ai-app/
 ### Documentation Files
 - `*.md` - Markdown documentation
 - `README.md` - Project overviews
-- `CLAUDE*.md` - AI collaboration guides
+- `AGENT*.md` - AI collaboration guides
 - `*_PLAN.md` - Planning documents
 
 ### Configuration Files
@@ -574,7 +558,7 @@ Evidence: `benchmark/results/benchmarks-manysleeps-triptych.json`
 ### For Documentation
 Check: Each project's root for `*.md` files
 Mirrors: `lib/` directories in each project
-Performance: `CLAUDE_PERFORMANCE_OPTIMIZATION_GUIDE.md`, `AI_PERFORMANCE_COLLABORATION_CASE_STUDY.md`
+Performance: `AGENT_PERFORMANCE_OPTIMIZATION_GUIDE.md`, `AI_PERFORMANCE_COLLABORATION_CASE_STUDY.md`
 
 ## Status Indicators
 
