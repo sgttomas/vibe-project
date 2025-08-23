@@ -1,0 +1,19 @@
+name: Paired Docs Check
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  paired-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run paired docs check (headers + divergence)
+        shell: bash
+        run: |
+          bash projects/vibe-project/scripts/paired-docs-check.sh --fail-on-missing --fail-on-policy --list

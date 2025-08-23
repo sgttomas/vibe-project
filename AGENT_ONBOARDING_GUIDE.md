@@ -1,86 +1,68 @@
 # Claude Onboarding Guide
 
-**For future Claude instances working on Chirality Framework projects**
+**For future Claude instances working on Backend Framework projects**
 
 **Code at its best is filigree: elegance revealed through structure and repetition. 
 What looks complex is pattern born of clarity, shaped by architecture, and refined through iteration.**
 
 ## Quick Start
 
-You're working with a dual-project system. First, determine which project needs work:
-- **chirality-ai-app**: TypeScript document generation app with Neo4j
-- **chirality-semantic-framework**: Python CF14 semantic operations
+You're working with a dual-project system inside this repository. First, determine which project needs work:
+- **app**: TypeScript/Next.js document generation app with Neo4j (`projects/vibe-project/app`)
+- **framework**: Python CF14 semantic operations (`projects/vibe-project/framework`)
 
 Then use the appropriate setup guide:
-- **For app work**: Read AGENT_APP_SETUP_GUIDE.md (in this directory)
-- **For framework work**: Read AGENT_FRAMEWORK_SETUP_GUIDE.md (in this directory)
-- **For new Claude instances**: Continue reading this guide
+- **For app work**: Read `orchestration/AGENT_APP_SETUP_GUIDE.md`
+- **For framework work**: Read `orchestration/AGENT_FRAMEWORK_SETUP_GUIDE.md`
+- **New agent instances**: Continue reading this guide
 
 ## The System Overview
 
-**Three Projects, One Environment:**
+**Three Areas, One Environment:**
 ```
-/Users/ryan/Desktop/ai-env/vibe-code-challenge/
-├── chirality-ai-app/           (TypeScript/Next.js app)
-│   └── lib/chirality-semantic-framework/  (Framework docs mirror)
-├── chirality-semantic-framework/  (Python CF14 framework)
-│   └── lib/chirality-ai-app/   (App docs mirror)
-├── rapid/                      (Previous session - P3 artifacts accumulated)
-├── rapid-clean/                (Session 3 - SUCCESSFUL elegant solution!)
-│   ├── AGENT.md              (Session 3 clean implementation docs)
-│   ├── benchmark/results/     (Performance validation data)
-│   │   └── benchmarks-session3-clean-elegant-final.json
-│   ├── docs/ai-dev/          (Complete AI collaboration logs)
-│   └── core/                  (Elegant ~20-line trampolined solution)
+/Users/ryan/ai-env/projects/vibe-project/
+├── app/                 (TypeScript/Next.js app)
+│   └── lib/framework/   (Framework docs mirror)
+├── framework/           (Python CF14 framework)
+│   └── lib/app/         (App docs mirror)
+└── orchestration/       (Scripts, desktop tooling, setup guides)
 ```
 
-**Key Guides in This Directory:**
-- **AGENT_ONBOARDING_GUIDE.md** (this file) - Start here
-- **AGENT_APP_SETUP_GUIDE.md** - For app documentation work
-- **AGENT_FRAMEWORK_SETUP_GUIDE.md** - For framework documentation work
-- **AGENT_PERFORMANCE_OPTIMIZATION_GUIDE.md** - For rapid/ performance work
-- **AI_PERFORMANCE_COLLABORATION_CASE_STUDY.md** - Trampolined solution case study
+**Key Guides:**
+- `AGENT_ONBOARDING_GUIDE.md` (this file) — Start here
+- `orchestration/AGENT_APP_SETUP_GUIDE.md` — App documentation/workflow setup
+- `orchestration/AGENT_FRAMEWORK_SETUP_GUIDE.md` — Framework documentation/workflow setup
+- `AGENT_PERFORMANCE_OPTIMIZATION_GUIDE.md` — Performance work overview
 
 ## Step 1: Determine Your Task
 
-Check which project you're working on:
+Check which project you're working on (relative to repo root `projects/vibe-project`):
 ```bash
-pwd  # Where are you?
+pwd  # Should end with .../projects/vibe-project/(app|framework|orchestration)
 ```
 
-If in `/chirality-ai-app/`: You're doing app documentation
-If in `/chirality-semantic-framework/`: You're doing framework documentation
-**If in `/rapid-clean/`**: You're working with the SUCCESSFUL Session 3 elegant solution - **Read `rapid-clean/AGENT.md` for clean implementation details**
-**If in `/rapid/`**: You're reviewing previous sessions with P3 artifacts - **Read `rapid/AGENT.md` for historical context**
+- In `app/`: App documentation and related code
+- In `framework/`: Framework documentation and CF14 code
+- In `orchestration/`: Setup guides and tooling
 
 ## Step 2: Read the Knowledge Transfer Pipeline
 
 ### For App Work
-Read these in `/chirality-ai-app/lib/chirality-semantic-framework/`:
+Read these in `/ai-app/lib/framework/`:
 1. **KNOWLEDGE_TRANSFER_MANIFEST.md** - The canonical list (29 files)
 2. **AGENT.md** - Your role for this mirror
 3. **README.md** through **VERSION.md** - All framework docs
 4. Review the Python examples and config files
 
 ### For Framework Work  
-Read these in `/chirality-semantic-framework/lib/chirality-ai-app/`:
+Read these in `/framework/lib/ai-app/`:
 1. **KNOWLEDGE_TRANSFER_MANIFEST.md** - The canonical list (27 files)
 2. **AGENT.md** - Your role for this mirror
 3. **README.md** through **VERSION.md** - All app docs
 4. Review the TypeScript configs and package files
 
-### For Performance Work - Session 3 (SUCCESSFUL)
-Read these in `/rapid-clean/`:
-1. **AGENT.md** - Session 3 clean implementation achieving competitive performance
-2. **benchmark/results/benchmarks-session3-clean-elegant-final.json** - Performance validation data
-3. **core/jvm/src/main/scala/rapid/FixedThreadPoolFiber.scala** - Elegant ~20-line trampolined solution
-4. **docs/ai-dev/** - Complete AI collaboration logs from multiple LLMs
-
-### For Performance Work - Historical Context
-Read these in `/rapid/`:
-1. **AGENT.md** - Previous session documentation with P3 artifacts
-2. **DEVELOPMENT_SESSION_SUMMARY.md** - Lessons learned from incorrect benchmarks
-3. **AI_PERFORMANCE_COLLABORATION_CASE_STUDY.md** - Analysis of optimization attempts
+### For Performance Work
+See `AGENT_PERFORMANCE_OPTIMIZATION_GUIDE.md` in the project root for current guidance.
 
 ## Step 3: Read Project-Specific Documentation
 
@@ -156,20 +138,22 @@ Even if working on one project, check the other:
 ## File Location Quick Reference
 
 ```
-/Users/ryan/Desktop/ai-env/
+/Users/ryan/ai-env/projects/vibe-project/
 ├── AGENT_ONBOARDING_GUIDE.md (this file)
-├── AGENT_APP_SETUP_GUIDE.md
-├── AGENT_FRAMEWORK_SETUP_GUIDE.md
-├── chirality-ai-app/
+├── AGENT_PERFORMANCE_OPTIMIZATION_GUIDE.md
+├── orchestration/
+│   ├── AGENT_APP_SETUP_GUIDE.md
+│   └── AGENT_FRAMEWORK_SETUP_GUIDE.md
+├── app/
 │   ├── CONTINUOUS_IMPROVEMENT_PLAN.md
 │   ├── KEY_PROJECT_FILES.md
-│   └── lib/chirality-semantic-framework/ (29 files)
+│   └── lib/framework/
 │       ├── KNOWLEDGE_TRANSFER_MANIFEST.md
 │       └── AGENT.md
-└── chirality-semantic-framework/
-    ├── CONTINUOUS_IMPROVEMENT_PLAN.md (create if missing)
-    ├── KEY_PROJECT_FILES.md (create if missing)
-    └── lib/chirality-ai-app/ (27 files)
+└── framework/
+    ├── CONTINUOUS_IMPROVEMENT_PLAN.md
+    ├── KEY_PROJECT_FILES.md
+    └── lib/app/
         ├── KNOWLEDGE_TRANSFER_MANIFEST.md
         └── AGENT.md
 ```
@@ -185,4 +169,4 @@ Even if working on one project, check the other:
 
 ---
 
-*This guide helps future Claude instances navigate the complete Chirality documentation system.*
+*This guide helps future Claude instances navigate the complete Documentation system.*

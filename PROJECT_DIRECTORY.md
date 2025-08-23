@@ -24,9 +24,19 @@ vibe-project/
 ├── PROJECT_DIRECTORY.md               # This file - complete structure map
 ├── AI_PERFORMANCE_COLLABORATION_CASE_STUDY.md # Real-world performance case study
 │
-├── vcc-app/                           # Frontend application (Next.js/TypeScript)
-├── vcc-framework/                     # Backend framework (Python)
-├── vcc-orchestration/                 # Deployment and orchestration
+├── app/                                # Frontend application (Next.js/TypeScript)
+├── framework/                          # Backend framework (Python)
+├── orchestration/                     # Deployment and orchestration (compose + desktop)
+│   ├── compose/                      # docker-compose (Neo4j, optional GraphQL/Admin via profile)
+│   │   └── docker-compose.yml
+│   ├── desktop/                      # Electron-based AI Orchestrator app
+│   │   ├── src/main.ts              # Main process (settings window, validation, health)
+│   │   ├── resources/settings.html  # Settings UI (no nodeIntegration)
+│   │   ├── resources/settings-preload.js
+│   │   ├── resources/health-report.html
+│   │   └── resources/health-report-preload.js
+│   └── scripts/
+│       └── chirality                 # Compose helper: up/down/logs/status/reset
 ├── rapid/                             # Performance challenge - previous sessions (P3 artifacts)
 │   ├── benchmark/results/
 │   ├── docs/challenge/
@@ -53,10 +63,10 @@ vibe-project/
     └── build.sbt
 ```
 
-## VCC-App (Frontend Application)
+## App (Frontend Application)
 
 ```
-vcc-app/
+app/
 ├── .claude/                           # Claude-specific configuration
 │   └── settings.local.json
 ├── .devcontainer/                     # Dev container configuration
@@ -105,7 +115,7 @@ vcc-app/
 │   │   ├── AGENT_ONBOARDING_GUIDE.md
 │   │   ├── DIRECTORY_STRUCTURE.md
 │   │   └── SPLIT_APPS_ARCHITECTURE.md
-│   ├── chirality-semantic-framework/ # Backend documentation mirror
+│   ├── framework/ # Backend documentation mirror
 │   │   ├── KNOWLEDGE_TRANSFER_MANIFEST.md
 │   │   ├── AGENT.md
 │   │   └── [29 documentation files]
@@ -253,10 +263,10 @@ vcc-app/
 └── tsconfig.json                      # TypeScript configuration
 ```
 
-## VCC-Framework (Backend Framework)
+## Framework (Backend Framework)
 
 ```
-vcc-framework/
+framework/
 ├── .husky/                            # Git hooks
 │   └── _/
 │       └── [husky configuration files]
@@ -315,7 +325,7 @@ vcc-framework/
 │   │   ├── AGENT_ONBOARDING_GUIDE.md
 │   │   ├── DIRECTORY_STRUCTURE.md
 │   │   └── SPLIT_APPS_ARCHITECTURE.md
-│   └── chirality-ai-app/            # Frontend documentation mirror
+│   └── ai-app/            # Frontend documentation mirror
 │       ├── KNOWLEDGE_TRANSFER_MANIFEST.md
 │       ├── AGENT.md
 │       └── [27 documentation files]
@@ -434,10 +444,10 @@ rapid/
 - Option A (recommended): Start fresh from baseline
 - Option B: Remove P3 artifacts systematically
 
-## VCC-Orchestration (Deployment & Desktop)
+## Orchestration (Deployment & Desktop)
 
 ```
-vcc-orchestration/
+orchestration/
 ├── compose/                           # Docker orchestration
 │   ├── docker-compose.yml            # Main compose file
 │   └── .env                          # Environment variables
@@ -465,7 +475,7 @@ vcc-orchestration/
 
 ### Frontend → Backend Mirror
 ```
-vcc-app/lib/chirality-semantic-framework/
+app/lib/framework/
 ├── KNOWLEDGE_TRANSFER_MANIFEST.md    # Canonical file list
 ├── AGENT.md                           # AI collaboration guide
 └── [Complete backend documentation]
@@ -473,7 +483,7 @@ vcc-app/lib/chirality-semantic-framework/
 
 ### Backend → Frontend Mirror
 ```
-vcc-framework/lib/chirality-ai-app/
+framework/lib/app/
 ├── KNOWLEDGE_TRANSFER_MANIFEST.md    # Canonical file list
 ├── AGENT.md                           # AI collaboration guide
 └── [Complete frontend documentation]
@@ -539,15 +549,15 @@ EXTERNAL_SERVICE_URL=
 ## Quick Navigation
 
 ### For Frontend Development
-Start in: `vcc-app/`
+Start in: `app/`
 Key files: `src/`, `package.json`, `CONTINUOUS_IMPROVEMENT_PLAN.md`
 
 ### For Backend Development
-Start in: `vcc-framework/`
+Start in: `framework/`
 Key files: `chirality/`, `setup.py`, `CONTINUOUS_IMPROVEMENT_PLAN.md`
 
 ### For Deployment
-Start in: `vcc-orchestration/`
+Start in: `orchestration/`
 Key files: `compose/`, `desktop/`, scripts/`
 
 ### For Performance Optimization Challenges
@@ -579,3 +589,13 @@ Performance: `AGENT_PERFORMANCE_OPTIMIZATION_GUIDE.md`, `AI_PERFORMANCE_COLLABOR
 ---
 
 *This directory structure represents the complete Vibe Project AI co-development environment. It maintains separation of concerns while enabling seamless knowledge transfer between projects. The Rapid Performance Challenge attempt provides valuable lessons about the importance of proper benchmark validation and clean implementation approaches in AI-human collaborative development.*
+## CI & Health
+
+- .github/workflows/
+  - doc-slug-guard.yml            # Prevents legacy slugs (naming drift)
+  - paired-docs.yml               # Paired doc headers + divergence policy
+- projects/ai-env/scripts/        # Canonical tools referenced by CI
+  - doc-slug-guard.sh             # Slug guard (canonical)
+- scripts/ (vibe-project root)
+  - genericize-docs.sh            # One-shot docs genericization helper
+  - paired-docs-check.sh          # Mirrors/paired docs checker (headers/divergence)

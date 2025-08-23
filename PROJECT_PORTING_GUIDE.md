@@ -309,7 +309,7 @@ For the Rapid project, we'll use a **Multi-Module Decomposition** strategy:
 #### Proposed Component Structure
 ```
 rapid-ai-codev/
-├── CLAUDE_ONBOARDING_GUIDE.md          # Master AI collaboration entry
+├── AGENT_ONBOARDING_GUIDE.md           # Master AI collaboration entry
 ├── PROJECT_DIRECTORY.md                 # Complete environment map
 ├── PROJECT_PORTING_GUIDE.md            # This guide
 ├── 
@@ -366,27 +366,27 @@ echo "Component structure created successfully"
 TEMPLATE_SOURCE="<path-to-template-root>"  # e.g., ../projects/ai-env/templates/app
 
 # Master onboarding guide
-cp "$TEMPLATE_SOURCE/TEMPLATE_ONBOARDING_GUIDE.md" ./CLAUDE_ONBOARDING_GUIDE.md
+cp "$TEMPLATE_SOURCE/TEMPLATE_ONBOARDING_GUIDE.md" ./AGENT_ONBOARDING_GUIDE.md
 
 # Customize for Rapid project
-sed -i '' 's/\[PROJECT_NAME\]/rapid-ai-codev/g' CLAUDE_ONBOARDING_GUIDE.md
-sed -i '' 's/\[FRONTEND_TECH\]/Scala\/Web/g' CLAUDE_ONBOARDING_GUIDE.md
-sed -i '' 's/\[BACKEND_TECH\]/Scala\/JVM/g' CLAUDE_ONBOARDING_GUIDE.md
+sed -i '' 's/\[PROJECT_NAME\]/rapid-ai-codev/g' AGENT_ONBOARDING_GUIDE.md
+sed -i '' 's/\[FRONTEND_TECH\]/Scala\/Web/g' AGENT_ONBOARDING_GUIDE.md
+sed -i '' 's/\[BACKEND_TECH\]/Scala\/JVM/g' AGENT_ONBOARDING_GUIDE.md
 ```
 
 #### Apply Component Templates
 ```bash
 # Apply backend template to rapid-core (primary component)
-cp "$TEMPLATE_SOURCE/CLAUDE_BACKEND_TEMPLATE_GUIDE.md" rapid-core/CLAUDE_SETUP_GUIDE.md
-sed -i '' 's/\[PROJECT_NAME\]/rapid-ai-codev/g' rapid-core/CLAUDE_SETUP_GUIDE.md
-sed -i '' 's/\[BACKEND_TECH\]/Scala/g' rapid-core/CLAUDE_SETUP_GUIDE.md
-sed -i '' 's/\[PACKAGE_MANAGER\]/sbt/g' rapid-core/CLAUDE_SETUP_GUIDE.md
+cp "$TEMPLATE_SOURCE/AGENT_BACKEND_TEMPLATE_GUIDE.md" rapid-core/AGENT_SETUP_GUIDE.md
+sed -i '' 's/\[PROJECT_NAME\]/rapid-ai-codev/g' rapid-core/AGENT_SETUP_GUIDE.md
+sed -i '' 's/\[BACKEND_TECH\]/Scala/g' rapid-core/AGENT_SETUP_GUIDE.md
+sed -i '' 's/\[PACKAGE_MANAGER\]/sbt/g' rapid-core/AGENT_SETUP_GUIDE.md
 
 # Apply specialized templates for other components
-cp "$TEMPLATE_SOURCE/CLAUDE_BACKEND_TEMPLATE_GUIDE.md" rapid-tooling/CLAUDE_SETUP_GUIDE.md
+cp "$TEMPLATE_SOURCE/AGENT_BACKEND_TEMPLATE_GUIDE.md" rapid-tooling/AGENT_SETUP_GUIDE.md
 # Customize for tooling focus...
 
-cp "$TEMPLATE_SOURCE/CLAUDE_BACKEND_TEMPLATE_GUIDE.md" rapid-ecosystem/CLAUDE_SETUP_GUIDE.md
+cp "$TEMPLATE_SOURCE/AGENT_BACKEND_TEMPLATE_GUIDE.md" rapid-ecosystem/AGENT_SETUP_GUIDE.md
 # Customize for ecosystem focus...
 ```
 
@@ -740,9 +740,9 @@ done
 # Test 3: Template Application
 echo "✓ Testing template application..."
 required_files=(
-    "CLAUDE_ONBOARDING_GUIDE.md"
+    "AGENT_ONBOARDING_GUIDE.md"
     "PROJECT_DIRECTORY.md"
-    "rapid-core/CLAUDE_SETUP_GUIDE.md"
+    "rapid-core/AGENT_SETUP_GUIDE.md"
     "rapid-core/CONTINUOUS_IMPROVEMENT_PLAN.md"
     "rapid-core/KEY_PROJECT_FILES.md"
 )
@@ -787,7 +787,7 @@ echo "=== Testing AI Collaboration Patterns ==="
 
 # Simulate reading onboarding guide
 echo "✓ Testing onboarding guide..."
-if grep -q "rapid-ai-codev" CLAUDE_ONBOARDING_GUIDE.md; then
+if grep -q "rapid-ai-codev" AGENT_ONBOARDING_GUIDE.md; then
     echo "  ✓ Project name correctly customized"
 else
     echo "  ❌ Project name not customized"
@@ -796,7 +796,7 @@ fi
 # Test component navigation
 echo "✓ Testing component navigation..."
 for component in rapid-core rapid-tooling rapid-ecosystem; do
-    if [ -f "$component/CLAUDE_SETUP_GUIDE.md" ]; then
+    if [ -f "$component/AGENT_SETUP_GUIDE.md" ]; then
         echo "  ✓ $component has AI setup guide"
     else
         echo "  ❌ $component missing AI setup guide"
@@ -827,7 +827,7 @@ This AI co-development environment transforms the original Rapid library into a 
 
 ```
 rapid-ai-codev/
-├── CLAUDE_ONBOARDING_GUIDE.md          # Master AI collaboration entry
+├── AGENT_ONBOARDING_GUIDE.md           # Master AI collaboration entry
 ├── PROJECT_DIRECTORY.md                # This file
 ├── PROJECT_PORTING_GUIDE.md            # Porting documentation
 ├── scripts/                            # Validation and utility scripts
@@ -838,7 +838,7 @@ rapid-ai-codev/
 │   ├── lib/                           # Knowledge transfer mirrors
 │   │   ├── rapid-tooling/             # Tooling documentation mirror
 │   │   └── rapid-ecosystem/           # Ecosystem documentation mirror
-│   ├── CLAUDE_SETUP_GUIDE.md          # AI collaboration guide
+│   ├── AGENT_SETUP_GUIDE.md           # AI collaboration guide
 │   ├── CONTINUOUS_IMPROVEMENT_PLAN.md  # Improvement methodology
 │   └── KEY_PROJECT_FILES.md           # Status tracking
 │
@@ -848,7 +848,7 @@ rapid-ai-codev/
 │   ├── lib/                          # Knowledge transfer mirrors
 │   │   ├── rapid-core/               # Core documentation mirror
 │   │   └── rapid-ecosystem/          # Ecosystem documentation mirror
-│   ├── CLAUDE_SETUP_GUIDE.md         # AI collaboration guide
+│   ├── AGENT_SETUP_GUIDE.md          # AI collaboration guide
 │   ├── CONTINUOUS_IMPROVEMENT_PLAN.md # Improvement methodology
 │   └── KEY_PROJECT_FILES.md          # Status tracking
 │
@@ -858,7 +858,7 @@ rapid-ai-codev/
 │   ├── lib/                          # Knowledge transfer mirrors
 │   │   ├── rapid-core/               # Core documentation mirror
 │   │   └── rapid-tooling/            # Tooling documentation mirror
-│   ├── CLAUDE_SETUP_GUIDE.md         # AI collaboration guide
+│   ├── AGENT_SETUP_GUIDE.md          # AI collaboration guide
 │   ├── CONTINUOUS_IMPROVEMENT_PLAN.md # Improvement methodology
 │   └── KEY_PROJECT_FILES.md          # Status tracking
 │
@@ -896,9 +896,9 @@ rapid-ai-codev/
 
 ## Quick Start for AI Collaboration
 
-1. **Start Here**: Read `CLAUDE_ONBOARDING_GUIDE.md`
+1. **Start Here**: Read `AGENT_ONBOARDING_GUIDE.md`
 2. **Choose Component**: Navigate to component directory
-3. **Read Setup Guide**: Follow `CLAUDE_SETUP_GUIDE.md` for component
+3. **Read Setup Guide**: Follow `AGENT_SETUP_GUIDE.md` for component
 4. **Check Status**: Review `KEY_PROJECT_FILES.md` for current state
 5. **Begin Work**: Use knowledge transfer mirrors for context
 

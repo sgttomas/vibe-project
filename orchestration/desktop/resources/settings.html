@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Settings</title>
+  <style>
+    body{font-family: system-ui, sans-serif; padding:16px}
+    label{display:block; margin:8px 0 4px}
+    input[type=text]{width:100%; padding:6px}
+    .row{display:flex; gap:8px; align-items:center}
+    .row input{flex:1}
+    .actions{margin-top:16px; display:flex; gap:8px; justify-content:flex-end}
+    .checkboxes{margin-top:8px}
+  </style>
+  <script>
+    async function load(){
+      const prefs = await window.SettingsAPI.get();
+      document.getElementById('projectRoot').value = prefs.projectRoot || '';
+      document.getElementById('frontendRoot').value = prefs.frontendDir || '';
+      document.getElementById('autoStart').checked = !!prefs.autoStartBackend;
+      document.getElementById('devTools').checked = !!prefs.openDevTools;
+    }
+    async function browse(which){
+      const res = await window.SettingsAPI.browse(which);
+      if(res && res.path){
+        if(which==='project') document.getElementById('projectRoot').value = res.path;
+        else document.getElementById('frontendRoot').value = res.path;
+      }
+    }
+    async function save(){
+      const payload = {
+        projectRoot: document.getElementById('projectRoot').value.trim(),
+        frontendRoot: document.getElementById('frontendRoot').value.trim(),
+        autoStartBackend: document.getElementById('autoStart').checked,
+        openDevTools: document.getElementById('devTools').checked,
+      };
+      const out = await window.SettingsAPI.save(payload);
+      if(out && out.ok){ window.close(); }
+      else if(out && out.error){ alert(out.error); }
+    }
+    window.onload = load;
+  </script>
+</head>
+<body>
+  <h2>Settings</h2>
+  <label>Project Root</label>
+  <div class="row">
+    <input id="projectRoot" type="text" placeholder="/path/to/orchestrator"/>
+    <button onclick="browse('project')">Browse…</button>
+  </div>
+  <label>Frontend Root</label>
+  <div class="row">
+    <input id="frontendRoot" type="text" placeholder="/path/to/frontend"/>
+    <button onclick="browse('frontend')">Browse…</button>
+  </div>
+  <div class="checkboxes">
+    <label><input id="autoStart" type="checkbox"/> Auto-start backend</label>
+    <label><input id="devTools" type="checkbox"/> Open dev tools</label>
+  </div>
+  <div class="actions">
+    <button onclick="(async()=>{ const out = await window.SettingsAPI.testBackend(document.getElementById('projectRoot').value.trim()); document.getElementById('status').textContent = (out.messages||[]).join('\n'); })()">Test Backend</button>
+    <button onclick="(async()=>{ const out = await window.SettingsAPI.testFrontend(document.getElementById('frontendRoot').value.trim()); document.getElementById('status').textContent = (out.messages||[]).join('\n'); })()">Test Frontend</button>
+    <button onclick="(async()=>{ const out = await window.SettingsAPI.healthCheck(); document.getElementById('status').textContent = out.output || (out.ok?'OK':'No output'); })()">Run Health Check</button>
+    <button onclick="(async()=>{ const out = await window.SettingsAPI.testGraphQL(); document.getElementById('status').textContent = 'GraphQL ' + (out.ok?'OK':'FAIL') + ' (HTTP '+out.status+')\n' + (out.body||''); })()">Test GraphQL</button>
+    <button onclick="(async()=>{ const out = await window.SettingsAPI.testAdmin(); document.getElementById('status').textContent = 'Admin ' + (out.ok?'OK':'FAIL') + ' (HTTP '+out.status+')\n' + (out.body||''); })()">Test Admin</button>
+    <button onclick="(async()=>{ const out = await window.SettingsAPI.testFrontendUI(); document.getElementById('status').textContent = 'Frontend UI ' + (out.ok?'OK':'FAIL') + ' (HTTP '+out.status+')\n' + (out.body||''); })()">Test Frontend UI</button>
+    <button onclick="(async()=>{ const out = await window.SettingsAPI.testCompose(); document.getElementById('status').textContent = (out.ok?'Compose OK\n':'Compose FAIL\n') + ((out.warnings&&out.warnings.length)? ('Warnings:\n- '+out.warnings.join('\n- ')+'\n\n') : '') + (out.output||''); })()">Validate Compose</button>
+    <button onclick="save()">Save</button>
+    <button onclick="window.close()">Cancel</button>
+  </div>
+  <pre id="status" style="margin-top:12px; padding:8px; background:#f6f8fa; border:1px solid #ddd; max-height:180px; overflow:auto"></pre>
+</body>
+</html>

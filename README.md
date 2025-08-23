@@ -1,11 +1,44 @@
 # The Vibe Project: AI Co-Development Environment Analysis
 
+Initialization (AI Co‑Dev Environment)
+- This project is now initialized inside the AI Co‑Development Environment with generic nomenclature and automation to keep backend/frontend documentation, workflows, and scripts in sync.
+- Operating modes mapping (CF14-inspired):
+  - Normative: Canonical templates, standards, and reusable forms (see GENERIC_NOMENCLATURE.md, PAIRED_DOCS.md)
+  - Operative: Local execution and orchestration (orchestration/desktop, compose, app), paired docs mirrors
+  - Evaluative: Status and health tooling (Settings tests, health-check modal, compose lint, CI guards)
+  - Deliberative: Devhistory, improvement plans, and pairing rules (PAIRED_DOCS.md, CONTINUOUS_IMPROVEMENT_PLAN.md)
+
+Tooling & Automation (What’s in place)
+- Paired documentation guards: header cross-links + CI check to prevent silent drift between app/lib/framework and framework/lib/app.
+- Slug guard: forbids legacy product slugs in docs; configurable via .slug-guard-patterns (run in CI and locally via Makefile).
+- Generic nomenclature: consistent “Frontend App”, “Backend Framework”, “AI Orchestrator” across docs (see GENERIC_NOMENCLATURE.md).
+- Orchestrator Desktop app:
+  - Settings window (no nodeIntegration, preload bridge) with validation buttons: Test Backend, Test Frontend, Test Frontend UI, Test GraphQL, Test Admin, Validate Compose, Run Health Check.
+  - First‑run setup defers auto‑start until both roots are configured.
+  - Longer frontend startup wait (60s) with progress feedback in title bar.
+  - Persistent last‑error capture and a formatted health report modal.
+- Compose lint: JSON‑mode parsing when available (docker compose config --format json) plus heuristics for services, image/build/restart, env var resolution, port mappings, networks/volumes cross‑references, expected services.
+
+Quickstart (Orchestrator Desktop)
+- One‑liner (macOS/Linux):
+  - cd projects/vibe-project/orchestration/desktop
+  - env ORCHESTRATOR_ROOT="/Users/ryan/ai-env/projects/vibe-project/orchestration" FRONTEND_APP_ROOT="/Users/ryan/ai-env/projects/vibe-project/app" npm start
+- Or set once in shell:
+  - export ORCHESTRATOR_ROOT="…/vibe-project/orchestration"; export FRONTEND_APP_ROOT="…/vibe-project/app"; npm start
+- In the app:
+  - Settings → Open Settings… → Save roots → use Test buttons → Help → Run Health Check…
+
+Compose notes
+- graphql/admin are behind compose profile "full" by default; provide images or correct build contexts and run:
+  - docker compose --profile full up -d
+  - Or adjust orchestration/compose/docker-compose.yml to point at your local build contexts.
+
 Intent / Steps / Outputs / Acceptance / Evidence / Correspondence
 - Intent: Validate AI–human collaboration via clean baselines and elegant (~20-line) solutions; distill reusable patterns.
 - Steps: Analyze → reset baseline → implement elegant fix → benchmark → document → upstream learnings.
-- Outputs: Case study, reproducible benchmarks, clean baseline artifacts, updated sub-env docs (vcc-*).
-- Acceptance: Reproduce benchmark JSONs under `rapid-clean/benchmark/results/`; hit competitive throughput/latency; docs cross-link and quadrants aligned.
-- Evidence: `rapid-clean/CLAUDE.md`, `rapid-clean/docs/ai-dev/*`, `rapid-clean/benchmark/results/*.json`.
+- Outputs: Case study, reproducible benchmarks, clean baseline artifacts, updated sub-env docs (orchestration/app/framework).
+- Acceptance: Hit target throughput/latency defined in performance guide; docs cross-link and quadrants aligned.
+- Evidence: See `AGENT_PERFORMANCE_OPTIMIZATION_GUIDE.md` and linked benchmark/log artifacts.
 - Correspondence: Pairs with ReasonFlux (research) and informs frameworks/workflows and app/orchestrator (consumers).
 
 **Purpose**: Comprehensive analysis of systematic AI-human collaboration methodology achieving competitive performance through elegant solutions  
@@ -26,26 +59,26 @@ The vibe-project project demonstrates a sophisticated AI co-development environm
 
 I have successfully completed the comprehensive review and update of all three sub-co-development environments based on Session 3 validated principles:
 
-### **vcc-orchestration** (Orchestration Environment) ✅
-- Updated **CLAUDE_APP_SETUP_GUIDE.md** with Session 3 validation context
-- Enhanced **CLAUDE_FRAMEWORK_SETUP_GUIDE.md** with clean baseline principles  
+### **orchestration** (Orchestration Environment) ✅
+- Updated **AGENT_APP_SETUP_GUIDE.md** with Session 3 validation context
+- Enhanced **AGENT_FRAMEWORK_SETUP_GUIDE.md** with clean baseline principles  
 - Integrated Session 3 success patterns into **README.md**
 - Updated **SPLIT_APPS_ARCHITECTURE.md** with competitive performance achievements
 - Added Session 3 validation to **DIRECTORY_STRUCTURE.md**
 
-### **vcc-app** (Frontend Application Environment) ✅
-- Enhanced **CLAUDE.md** with Session 3 validated AI collaboration principles
+### **app** (Frontend Application Environment) ✅
+- Enhanced **AGENT.md** with Session 3 validated AI collaboration principles
 - Updated **CONTINUOUS_IMPROVEMENT_PLAN.md** with systematic methodology validation
 - Integrated competitive performance standards into **README.md**
 - Added Session 3 principles to contributing guidelines and use cases
 
-### **vcc-framework** (Backend Framework Environment) ✅  
-- Updated **CLAUDE.md** with Session 3 breakthrough success validation
+### **framework** (Backend Framework Environment) ✅  
+- Updated **AGENT.md** with Session 3 breakthrough success validation
 - Enhanced **README.md** with competitive performance evidence and clean baseline approach
 - Integrated elegant solution principles throughout the framework documentation
 
 ### **Cross-Component Integration** ✅
-All three environments now consistently reference:
+All three areas now consistently reference:
 - **Session 3 validated principles**: Systematic AI-human collaboration methodology
 - **Competitive performance achievements**: Benchmark-validated breakthrough results
 - **Elegant solution focus**: ~20-line principle for maximum impact
@@ -60,17 +93,17 @@ The documentation now provides a unified foundation for future AI co-development
 
 - Case study: `AI_PERFORMANCE_COLLABORATION_CASE_STUDY.md`
 - Sub-environments:
-  - vcc-app (frontend): `vcc-app/README.md`
-  - vcc-framework (backend): `vcc-framework/README.md`
-  - vcc-orchestration (deployment): `vcc-orchestration/README.md`
+  - app (frontend): `app/README.md`
+  - framework (backend): `framework/README.md`
+  - orchestration (deployment): `orchestration/README.md`
 
 ## Consumer Breadcrumbs
 
 - Framework and workflows (consumers):
-  - `../chirality-semantic-framework/README.md`
+  - `../chirality-framework/README.md`
   - `../workflows/README.md`
 - App and orchestrator (consumers):
-  - `../chirality-ai-app/README.md`
+  - `../chirality-app/README.md`
   - `../chirality-ai/README.md`
 
 ## Analysis: The Co-Development Architecture as a Pragmatic Paradigm
@@ -92,9 +125,9 @@ This addresses the entropy problem that kills most long-term AI collaboration ef
 
 #### **3. Multi-Modal Collaboration**
 The split between:
-- **vcc-orchestration**: Meta-level coordination
-- **vcc-app**: Frontend/user-facing concerns  
-- **vcc-framework**: Backend/algorithmic concerns
+- **orchestration**: Meta-level coordination
+- **app**: Frontend/user-facing concerns  
+- **framework**: Backend/algorithmic concerns
 
 ...mirrors how human teams naturally organize, but with AI-optimized documentation at each level. This is pragmatic specialization done right.
 
@@ -135,11 +168,23 @@ The architecture successfully operationalizes "vibe-coding" principles into conc
 
 ## Correspondence
 
-- Paired with: `projects/chirality_-_ReasonFlux/`
+- Paired with: `projects/chirality-ReasonFlux/`
 - Role: Applied validation of research advances via real AI‑human co‑dev outcomes (benchmarked performance, elegant solutions).
 
 See also
 - ../../docs/CO-DEV-QUADRANTS.md — Co‑dev model (normative/operative/evaluative/deliberative)
+- ./GENERIC_NOMENCLATURE.md — Standard generic terms used across this project
+ - ./PAIRED_DOCS.md — Paired doc rules and checker
+ - ./orchestration/README.md — Orchestrator overview and usage
+ - ./orchestration/desktop/README.md (if present) — Desktop app notes
+
+## Paired Documentation (App ↔ Framework)
+
+This project uses perspective-paired docs to keep frontend and backend aligned:
+- App perspective: `app/lib/framework/`
+- Framework perspective: `framework/lib/app/`
+
+See `PAIRED_DOCS.md` for pairing rules, the status checker, and a recommended header snippet.
 
 ## Systematic Context Management: Meta-Validation Through vibe-project
 
@@ -160,26 +205,27 @@ This happened because the vibe-project **IS the bidirectional mirror system in a
 
 **vibe-project Structure as Mirror System**
 ```
-/Users/ryan/Desktop/ai-env/vibe-project/
-├── rapid-clean/                     # Session 3 source of truth
-├── vcc-orchestration/              # Meta-coordination mirror
-├── vcc-app/                        # Frontend concerns mirror  
-├── vcc-framework/                  # Backend concerns mirror
-├── PROJECT_PORTING_GUIDE.md        # Methodology capture
+/Users/ryan/ai-env/projects/vibe-project/
+├── orchestration/                 # Meta-coordination and setup guides
+├── app/                           # Frontend concerns (Next.js/TypeScript)
+│   └── lib/framework/             # Framework docs mirror
+├── framework/                     # Backend concerns (Python/CF14)
+│   └── lib/app/                   # App docs mirror
+├── PROJECT_PORTING_GUIDE.md       # Methodology capture
 └── DOCUMENTATION_CHECKLIST_FRAMEWORK.md # Systematic validation
 ```
 
 The entire vibe-project project **demonstrates** the bidirectional mirror concept:
-- **rapid-clean/** contains the Session 3 breakthrough evidence
-- **vcc-*** folders mirror different aspects of the successful methodology
-- **Foundational docs** capture the systematic principles
+- The `app/lib/framework` and `framework/lib/app` mirrors keep perspectives aligned
+- Orchestration provides the operational glue and setup guidance
+- Foundational docs capture the systematic principles
 
 #### **Context Persistence Across Sessions**
 
-**What Made This Session Successful**
-1. **Complete Evidence Package**: Session 3 results fully documented in rapid-clean/
-2. **Methodology Capture**: PROJECT_PORTING_GUIDE.md systematized the learning
-3. **Validation Framework**: DOCUMENTATION_CHECKLIST_FRAMEWORK.md provided quality standards
+**What Makes This Work**
+1. **Complete Evidence Package**: Performance methodology captured in guides
+2. **Methodology Capture**: PROJECT_PORTING_GUIDE.md systematizes the learning
+3. **Validation Framework**: DOCUMENTATION_CHECKLIST_FRAMEWORK.md provides quality standards
 4. **Structured Environment**: Three specialized sub-environments with clear boundaries
 
 **Why This Works Better Than "Memory"**
@@ -256,14 +302,14 @@ This is **critical** - your documentation IS your AI collaboration infrastructur
 **Required Files:**
 ```
 your-project/
-├── CLAUDE_ONBOARDING_GUIDE.md     # Master AI entry point
+├── AGENT_ONBOARDING_GUIDE.md      # Master AI entry point
 ├── PROJECT_DIRECTORY.md           # Complete structure map
 ├── CONTINUOUS_IMPROVEMENT_PLAN.md # Evolution methodology
 └── KEY_PROJECT_FILES.md           # Status tracking
 ```
 
 **The Non-Coder Translation:**
-- **CLAUDE_ONBOARDING_GUIDE.md**: "How to explain this project to any AI assistant"
+- **AGENT_ONBOARDING_GUIDE.md**: "How to explain this project to any AI assistant"
 - **PROJECT_DIRECTORY.md**: "Complete map of everything in this project"
 - **CONTINUOUS_IMPROVEMENT_PLAN.md**: "How we systematically improve this project"
 - **KEY_PROJECT_FILES.md**: "What's the current status of all our documentation"
@@ -301,7 +347,7 @@ your-project/
 - **Cognitive Load**: AI must mentally reconstruct the full picture from fragments
 - **Debugging Nightmare**: When something breaks, AI can't see the complete flow
 
-**Session 3 Evidence**: The rapid-clean success came from **clear, direct implementations** rather than over-abstracted architectures.
+**Session Evidence**: Prior clean-baseline successes came from **clear, direct implementations** rather than over-abstracted architectures.
 
 **Vibe-Coding Alternative**: **Systematic Clarity Over DRY**
 - Repeat yourself if it makes the AI's job clearer
@@ -346,17 +392,16 @@ The vibe-project reveals a **fundamental risk** that undermines all the systemat
 
 ### **The File Location Nightmare**
 
-**What Actually Happened in Our Session**
-Looking at our work, I was operating across multiple disconnected locations:
+**What Can Happen in Complex Repos**
+It's easy to operate across multiple disconnected locations:
 ```
-/Users/ryan/Desktop/ai-env/vibe-project/vcc-orchestration/
-/Users/ryan/Desktop/ai-env/vibe-project/vcc-app/
-/Users/ryan/Desktop/ai-env/vibe-project/vcc-framework/
-/Users/ryan/Desktop/ai-env/vibe-project/rapid-clean/
+/Users/ryan/ai-env/projects/vibe-project/orchestration/
+/Users/ryan/ai-env/projects/vibe-project/app/
+/Users/ryan/ai-env/projects/vibe-project/framework/
 ```
 
 **The Dangerous Reality:**
-- I updated documentation in `vcc-*` folders that may be **disconnected** from actual project repositories
+- I updated documentation in mirror/example folders that may be **disconnected** from actual project repositories
 - Changes I made might be in "mirror" or "example" directories, not the real codebase
 - Version control state is **completely opaque** to me
 - I have no idea if these changes will persist or sync to the actual projects
@@ -370,9 +415,9 @@ Looking at our work, I was operating across multiple disconnected locations:
 
 ### **The Catastrophic Risk**
 ```
-AI Session 1: Updates vcc-app/CLAUDE.md
-AI Session 2: Updates chirality-ai-app/CLAUDE.md
-Human: Both versions now exist, contradicting each other
+AI Session 1: Updates app/README.md
+AI Session 2: Updates framework/README.md with overlapping content
+Human: Both versions now diverge and contradict
 Result: Documentation fragmentation and chaos
 ```
 
